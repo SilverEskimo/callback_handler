@@ -34,11 +34,13 @@ It is engineered to seamlessly integrate with plugins, allowing users to effortl
 - [Base Plugins](#base-plugins)
   - [Transaction Validation](#transaction-validation-plugin)
   - [Extra Signature Validation](#extra-signature-validation)
+  - [Transaction AI Analyzer - Soon]()
+  - [Auto AddressWhitelisting - Soon]()
 - [Adding New Plugins](#adding-new-plugins-and-setting-a-new-db-connection-)
   - [Adding New Plugins](#new-plugins-)
   - [New DB Connections](#setting-a-new-db-connection-)
 - [Usage](#usage)
-
+- [Tests - #TODO]()
 ---
 
 ## Base Plugins ⚾
