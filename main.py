@@ -1,6 +1,6 @@
 import uvicorn
 from src import settings
-from src.exceptions import ValidationError
+from src.exceptions import ValidationError, DatabaseUnsupportedError, PluginLoadError
 from src.logs.logger_config import logger
 from src.plugins.plugin_manager import PluginManager
 from src.authenticate import authenticate_jwt
@@ -23,7 +23,14 @@ async def on_startup(app: FastAPI):
     except ValidationError as e:
         logger.error(f"Validation Error: {e}")
         exit(1)
-
+    except DatabaseUnsupportedError as e:
+        logger.error(f"{e}")
+        exit(1)
+    except ValueError as e:
+        logger.error(f"{e}")
+        exit(1)
+    except PluginLoadError as e:
+        logger.error(f"{e}")
 
 app = FastAPI(lifespan=on_startup)
 

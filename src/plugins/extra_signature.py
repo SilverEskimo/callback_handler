@@ -56,4 +56,4 @@ class ExtraSignature(Plugin):
         pass
 
     def __repr__(self) -> str:
-        return "<Extra Signature validation Plugin>"
+        return "<Extra Signature Validation Plugin>"
