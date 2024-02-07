@@ -1,6 +1,6 @@
 .env
 venv/
-log/
+log/*
 !log/.gitkeep
 keys/*
 !keys/.gitkeep
