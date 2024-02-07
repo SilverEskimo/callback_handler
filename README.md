@@ -1,6 +1,11 @@
 <p align="center">
   <img src="./logo.svg" width="350" alt="accessibility text">
 </p>
+<div align="center">
+    [<ins>Fireblocks Developer Portal</ins>](https://developers.fireblocks.com)
+    </br>
+    [<ins>Fireblocks API Co-Signer & Callback Handler Docs</ins>](https://developers.fireblocks.com/reference/automated-signer-callback)
+</div>
 
 # Fierblocks Plugin Based Callback Handler
 
