@@ -1,4 +1,6 @@
 # Fierblocks Plugin Based Callback Handler
+
+> **_WARNING:_** This is a WIP Alpha project. Please do not use it on your production environment.
 ## Introduction:
 ### Fireblocks API Co-Signer & Callback Handler
 The Fireblocks API Co-Signer allows you to automate approvals and signing for transactions and workspace changes. \
@@ -11,9 +13,8 @@ The Callback Handler's response is a JWT-encoded message signed with the Callbac
 For detailed documentation of the API Co-Signer Callback Handler Data objects please visit [Fireblocks Developer Portal](https://developers.fireblocks.com/reference/automated-signer-callback).
 
 ### Callback Handler Plugin Application
-The Callback Handler Plugins Application is a boilerplate application that eases the Callback Handler installation and setup for Fireblocks users. \
-The application is designed to work with plugins that any user can develop easily without spending any time or development efforts on the server application development.
-The Plugins application comes with a number of pre-configured Plugins. Description for each such plugin can be found below.
+The Fireblocks Plugin Based Callback Handler is a boilerplate application that eases the Callback Handler installation and setup for Fireblocks users. \
+It is engineered to seamlessly integrate with plugins, allowing users to effortlessly develop custom functionalities without dedicating resources to server application development. The Plugins application is bundled with a selection of pre-configured plugins, each detailed below for reference.
 
 ---
 
