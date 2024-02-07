@@ -1,42 +1,53 @@
 import uvicorn
 import settings
+from exceptions import ValidationError
 from logger_config import logger
 from plugin_manager import PluginManager
 from authenticate import authenticate_jwt
-from fastapi import FastAPI, Request, Response
 from callback_response import CallbackResponse
+from fastapi.responses import JSONResponse
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, Request, HTTPException
 
-app = FastAPI()
+
 plugin_manager = PluginManager()
-plugin_manager.load_plugins(settings.PLUGINS, settings.DB_TYPE)
+
+
+@asynccontextmanager
+async def on_startup(app: FastAPI):
+    try:
+        settings.run_validations()
+        plugin_manager.load_plugins(settings.PLUGINS, settings.DB_TYPE)
+        logger.info(f"Callback handler is running with the following plugins: {plugin_manager.get_plugins()}")
+        yield
+    except ValidationError as e:
+        logger.error(f"Validation Error: {e}")
+        exit(1)
+
+
+app = FastAPI(lifespan=on_startup)
 
 
 @app.post("/v2/tx_sign_request")
 @authenticate_jwt
-async def tx_approval(payload: dict):
+async def tx_approval(request: Request, payload: dict):
     try:
-        if await plugin_manager.process_request(payload):
-            response = CallbackResponse(
-                "APPROVE", payload["requestId"], None
-            ).get_response()
-            return Response(response)
-        else:
-            response = CallbackResponse(
-                "REJECT", payload["requestId"], "Logic denied"
-            ).get_response()
-            return Response(response)
+        approval_result = await plugin_manager.process_request(payload)
+        response_status = "APPROVE" if approval_result else "REJECT"
+        reason = None if approval_result else "Logic denied"
+        response = CallbackResponse(response_status, payload["requestId"], reason).get_response()
+        return JSONResponse(content=response)
     except Exception as e:
         logger.error(f"Transaction Approval process failed with the following error: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 
 @app.post("/v2/config_change_sign_request")
+@authenticate_jwt
 async def change_approval(request: Request):
-    return Response(content="reject")
-
+    # Assuming this endpoint needs to perform some operations before returning 'reject'
+    # Placeholder for actual logic
+    return JSONResponse(content={"message": "reject"})
 
 if __name__ == "__main__":
-    logger.info(
-        f"Callback handler is running with the following plugins: {plugin_manager.get_plugins()}"
-    )
-    uvicorn.run("main:app", host="127.0.0.1", port=8000)
-
+    uvicorn.run("main:app", host="127.0.0.1", port=settings.SERVER_PORT)

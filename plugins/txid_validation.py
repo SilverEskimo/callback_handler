@@ -1,4 +1,5 @@
 import settings
+from exceptions import PluginError
 from interfaces import Plugin
 from logger_config import logger
 from databases.mongo import MongoDB
@@ -7,10 +8,13 @@ from databases.postgres import PostgresDB
 
 class TxidValidation(Plugin):
     async def process_request(self, data: dict) -> bool:
-        tx_id = data.get("txId")
-        result = await self._validate_txid(tx_id)
-        logger.info(f"Approval result from TX ID Validation is: {result}")
-        return result
+        try:
+            tx_id = data.get("txId")
+            result = await self._validate_txid(tx_id)
+            logger.info(f"Approval result from TX ID Validation is: {result}")
+            return result
+        except Exception as e:
+            raise PluginError(f"Error in TxID Validation plugin: {e}")
 
     async def _validate_txid(self, tx_id: str) -> bool:
         logger.info(f"Validating that {tx_id} exists in the DB")

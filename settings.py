@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 
 import logger_config
+from exceptions import ValidationError
 
 # Load environment variables from .env file
 load_dotenv()
@@ -20,7 +21,7 @@ DB_NAME = os.getenv("DB_NAME")
 COSIGNER_PUBLIC_KEY_PATH = os.getenv('COSIGNER_PUBLIC_KEY_PATH')
 CALLBACK_PRIVATE_KEY_PATH = os.getenv('CALLBACK_PRIVATE_KEY_PATH')
 EXTRA_SIGNATURE_PUBLIC_KEY_PATH = os.getenv('EXTRA_SIGNATURE_PUBLIC_KEY_PATH')
-
+SERVER_PORT = 8000
 
 DB_CONFIG = {
     "user": DB_USER,
@@ -45,11 +46,8 @@ def run_validations() -> None:
         validate_db_config()
         logger_config.logger.info("Completed all validations")
     except Exception as e:
-        logger_config.logger.error(f"Validation Failed with the following error: {e}")
-        exit(1)
+        raise  ValidationError(f"Failed to validate settings.py with the following error {e}")
 
-
-run_validations()
 
 
 

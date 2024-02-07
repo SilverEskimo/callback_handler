@@ -1,5 +1,6 @@
 import base64
 import settings
+from exceptions import PluginError
 from interfaces import Plugin
 from logger_config import logger
 from fastapi import HTTPException
@@ -21,7 +22,8 @@ class ExtraSignature(Plugin):
             return await self._verify_signature(message, signature)
         except Exception as e:
             logger.error(f"Failed to validate signature: {e}")
-        return False
+            raise PluginError(f"Error in ExtraSignature plugin: {e}")
+
 
     @staticmethod
     async def _read_public_key():
