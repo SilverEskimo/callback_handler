@@ -8,9 +8,9 @@
 </div>
 
 # Fierblocks Plugin Based Callback Handler
-‼️
-> **_WARNING:_** This is a WIP Alpha project. Please do not use it on your production environment
-## Introduction:
+❗⚠️  `This is a WIP Alpha project. Please do not use it on your production environment` ⚠️❗
+
+## Introduction 👋
 ### Fireblocks API Co-Signer & Callback Handler
 The Fireblocks API Co-Signer allows you to automate approvals and signing for transactions and workspace changes. \
 This is ideal for any workspace expecting a high volume of transactions, frequent workspace activity, or requiring 24-hour access.\
@@ -28,7 +28,7 @@ It is engineered to seamlessly integrate with plugins, allowing users to effortl
 ---
 
 
-## Table Of Contents
+## Table Of Contents 📖
 
 - [Introduction](#introduction)
 - [Base Plugins](#base-plugins)
@@ -41,7 +41,7 @@ It is engineered to seamlessly integrate with plugins, allowing users to effortl
 
 ---
 
-## Base Plugins:
+## Base Plugins ⚾
 ### Transaction Validation Plugin (`txid_validation.py/TxidValidation` class)
 Being executed on `POST /v2/tx_sign_request`.
 The plugin gets the transaction ID (txId) from the payload sent from the Co-Signer and check against a given DB if the same transaction ID exists.
@@ -115,7 +115,7 @@ Purpose - making sure that the arrived transaction was initiated only by a pre-d
 
 ---
 
-## Adding new plugins and setting a new DB connection
+## Adding new plugins and setting a new DB connection 🛠️
 ### New Plugins:
 1. Create a new python file in the `src/plugins` directory and name it in snake_case, for example: my_example_plugin.py
 2. Create a class in the newly created file in PascalCase, for example: MyExamplePlugin
@@ -158,7 +158,7 @@ class MyExamplePlugin(Plugin)
       'my_db_conn': MyDbConn
      }
      ```
-## Usage
+## Usage ⚙️
 1. Update .env file with all the relevant values 
 2. Co-Signer public key in a file (To verify received JWT received from the Co-Signer)
 3. Callback Handler private key (To sign JWT response back to the Co-Signer)
