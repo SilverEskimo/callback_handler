@@ -35,7 +35,7 @@ async def on_startup(app: FastAPI):
 app = FastAPI(lifespan=on_startup)
 
 
-@app.post("/v2/tx_sign_request")
+@app.post()
 @authenticate_jwt
 async def tx_approval(request: Request, payload: dict):
     try:
