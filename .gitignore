@@ -2,3 +2,5 @@
 venv/
 keys/*
 !keys/.gitkeep
+__pycache__/
+.idea
