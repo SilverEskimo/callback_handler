@@ -1,0 +1,40 @@
+callback_handler: ERROR | 2024-01-28 18:42:18,724 | plugin.py: Failed to load plugin extra_signature: expected an indented block after function definition on line 18 (extra_signature.py, line 20)
+callback_handler: ERROR | 2024-01-28 18:42:18,734 | plugin.py: Failed to load plugin extra_signature: expected an indented block after function definition on line 18 (extra_signature.py, line 20)
+callback_handler: ERROR | 2024-01-28 19:17:58,436 | extra_signature.py: Could not verify the extra signature, error: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+callback_handler: ERROR | 2024-01-28 19:17:58,436 | extra_signature.py: Failed to validate signature: Failed to verify extra signature
+callback_handler: ERROR | 2024-01-28 19:19:46,636 | extra_signature.py: Could not verify the extra signature, error: Could not deserialize key data. The data may be in an incorrect format or it may be encrypted with an unsupported algorithm.
+callback_handler: ERROR | 2024-01-28 19:19:46,636 | extra_signature.py: Failed to validate signature: Failed to verify extra signature
+callback_handler: ERROR | 2024-01-28 19:24:26,984 | extra_signature.py: Failed to validate signature: ExtraSignature.verify_signature() missing 1 required positional argument: 'public_key_file'
+callback_handler: ERROR | 2024-01-28 19:24:45,438 | extra_signature.py: Error verifying signature: Expected instance of hashes.HashAlgorithm.
+callback_handler: ERROR | 2024-01-28 19:24:45,438 | extra_signature.py: Failed to validate signature: 400: Could not verify the extra signature, error: Expected instance of hashes.HashAlgorithm.
+callback_handler: ERROR | 2024-01-31 20:05:26,801 | plugin_manager.py: Failed to load plugin txid_validation: 'await' outside async function (txid_validation.py, line 11)
+callback_handler: ERROR | 2024-01-31 20:05:26,813 | plugin_manager.py: Failed to load plugin txid_validation: 'await' outside async function (txid_validation.py, line 11)
+callback_handler: 2024-02-06 15:51:36,282 |  settings.py: | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:52:15,439 |  settings.py: | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:52:15,733 |  plugin_manager.py: | ERROR: Failed to load plugin txid_validation: name 'db_instance' is not defined
+callback_handler: 2024-02-06 15:52:15,733 |  plugin_manager.py: | ERROR: Failed to load plugin extra_signature: name 'db_instance' is not defined
+callback_handler: 2024-02-06 15:52:15,744 |  plugin_manager.py: | ERROR: Failed to load plugin txid_validation: name 'db_instance' is not defined
+callback_handler: 2024-02-06 15:52:15,745 |  plugin_manager.py: | ERROR: Failed to load plugin extra_signature: name 'db_instance' is not defined
+callback_handler: 2024-02-06 15:52:30,595 |  settings.py: | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:52:30,889 |  plugin_manager.py: | ERROR: Failed to load plugin txid_validation: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:52:30,890 |  plugin_manager.py: | ERROR: Failed to load plugin extra_signature: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:52:30,901 |  plugin_manager.py: | ERROR: Failed to load plugin txid_validation: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:52:30,901 |  plugin_manager.py: | ERROR: Failed to load plugin extra_signature: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:53:18,729 |  settings.py:39 | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:53:19,068 |  plugin_manager.py:30 | ERROR: Failed to load plugin txid_validation: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:53:19,069 |  plugin_manager.py:30 | ERROR: Failed to load plugin extra_signature: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:53:19,079 |  plugin_manager.py:30 | ERROR: Failed to load plugin txid_validation: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:53:19,079 |  plugin_manager.py:30 | ERROR: Failed to load plugin extra_signature: cannot access local variable 'db_instance' where it is not associated with a value
+callback_handler: 2024-02-06 15:53:42,461 |  settings.py:39 | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:54:07,894 |  settings.py:39 | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:54:22,882 | settings.py:39 | ERROR: Validation Failed with the following error: Unsupported DB type: mongodbs
+callback_handler: 2024-02-06 15:54:59,257 | settings.py:39 | ERROR: Validation Failed with the following error: txid_validation plugin requires a valid DB setup
+callback_handler: 2024-02-06 16:08:15,834 | plugin_manager.py:30 | ERROR: Failed to load plugin roman: No module named 'plugins.roman'
+callback_handler: 2024-02-06 16:08:15,846 | plugin_manager.py:30 | ERROR: Failed to load plugin roman: No module named 'plugins.roman'
+callback_handler: 2024-02-06 16:11:18,099 | main.py:29 | ERROR: Transaction Approval process failed with the following error: module 'settings' has no attribute 'DB_CONFIG'
+callback_handler: 2024-02-06 16:13:54,676 | main.py:29 | ERROR: Transaction Approval process failed with the following error: MongoDB.connect() got an unexpected keyword argument 'type'
+callback_handler: 2024-02-06 16:14:22,630 | main.py:29 | ERROR: Transaction Approval process failed with the following error: MongoDB.connect() got an unexpected keyword argument 'table'
+callback_handler: 2024-02-06 16:15:38,327 | main.py:29 | ERROR: Transaction Approval process failed with the following error: Bad database name "/callback_db"
+callback_handler: 2024-02-06 16:16:09,133 | main.py:29 | ERROR: Transaction Approval process failed with the following error: The DNS query name does not exist: _mongodb._tcp.luster0.fduptu2.mongodb.nt.
+callback_handler: 2024-02-06 16:16:32,367 | main.py:29 | ERROR: Transaction Approval process failed with the following error: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+callback_handler: 2024-02-06 17:33:28,712 | main.py:29 | ERROR: Transaction Approval process failed with the following error: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
