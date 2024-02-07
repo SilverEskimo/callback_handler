@@ -5,7 +5,7 @@ logger = logging.getLogger("callback_handler")
 logger.setLevel(logging.DEBUG)
 
 stdout_handler = logging.StreamHandler(stream=sys.stdout)
-err_handler = logging.FileHandler("log/error.log")
+err_handler = logging.FileHandler("logs/error.log")
 
 stdout_handler.setLevel(logging.DEBUG)
 err_handler.setLevel(logging.ERROR)

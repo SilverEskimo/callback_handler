@@ -1,7 +1,7 @@
 .env
 venv/
-log/*
-!log/.gitkeep
+logs/*
+!logs/.gitkeep
 keys/*
 !keys/.gitkeep
 __pycache__/
