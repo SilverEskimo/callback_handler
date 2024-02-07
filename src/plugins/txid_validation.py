@@ -39,5 +39,5 @@ class TxidValidation(Plugin):
             raise NotImplementedError("Query generation not implemented for this database type")
 
     def __repr__(self) -> str:
-        return "TxidValidation"
+        return "<Transaction ID Validation Plugin>"
 
