@@ -1,5 +1,5 @@
 from src import settings
-from src.interfaces import DatabaseInterface
+from src.databases.interface import DatabaseInterface
 from pymongo.database import Database
 import motor.motor_asyncio
 

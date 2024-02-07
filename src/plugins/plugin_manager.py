@@ -1,5 +1,5 @@
 import importlib
-from src.logger_config import logger
+from src.logs.logger_config import logger
 from src.databases.mongo import MongoDB
 from src.databases.postgres import PostgresDB
 

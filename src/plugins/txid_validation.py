@@ -1,7 +1,7 @@
 from src import settings
 from src.exceptions import PluginError
-from src.interfaces import Plugin
-from src.logger_config import logger
+from src.plugins.interface import Plugin
+from src.logs.logger_config import logger
 from src.databases.mongo import MongoDB
 from src.databases.postgres import PostgresDB
 

@@ -1,8 +1,8 @@
 import uvicorn
 from src import settings
 from src.exceptions import ValidationError
-from src.logger_config import logger
-from src.plugin_manager import PluginManager
+from src.logs.logger_config import logger
+from src.plugins.plugin_manager import PluginManager
 from src.authenticate import authenticate_jwt
 from src.callback_response import CallbackResponse
 from fastapi.responses import JSONResponse

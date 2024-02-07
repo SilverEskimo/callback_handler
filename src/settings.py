@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-from src.logger_config import logger
+from src.logs.logger_config import logger
 from src.exceptions import ValidationError
 
 # Load environment variables from .env file
