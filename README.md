@@ -1,17 +1,4 @@
 # Fierblocks Plugin Based Callback Handler
-
-
-## Table Of Content 
-
-- [Introduction](#introduction)
-- [Base Plugins](#base-plugins)
-  - [Transaction Validation](#transaction-validation-plugin)
-  - [Extra Signature Validation](#extra-signature-validation)
-- [Adding New Plugins](#adding-new-plugins-and-setting-a-new-db-connection-)
-  - [Adding New Plugins](#new-plugins-)
-  - [New DB Connections](#setting-a-new-db-connection-)
-- [Usage](#usage)
----
 ## Introduction:
 ### Fireblocks API Co-Signer & Callback Handler
 The Fireblocks API Co-Signer allows you to automate approvals and signing for transactions and workspace changes. \
@@ -27,6 +14,20 @@ For detailed documentation of the API Co-Signer Callback Handler Data objects pl
 The Callback Handler Plugins Application is a boilerplate application that eases the Callback Handler installation and setup for Fireblocks users. \
 The application is designed to work with plugins that any user can develop easily without spending any time or development efforts on the server application development.
 The Plugins application comes with a number of pre-configured Plugins. Description for each such plugin can be found below.
+
+---
+
+
+## Table Of Content 
+
+- [Introduction](#introduction)
+- [Base Plugins](#base-plugins)
+  - [Transaction Validation](#transaction-validation-plugin)
+  - [Extra Signature Validation](#extra-signature-validation)
+- [Adding New Plugins](#adding-new-plugins-and-setting-a-new-db-connection-)
+  - [Adding New Plugins](#new-plugins-)
+  - [New DB Connections](#setting-a-new-db-connection-)
+- [Usage](#usage)
 
 ---
 
