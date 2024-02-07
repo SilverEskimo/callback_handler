@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./logo.svg" width="350" alt="accessibility text">
+</p>
+
 # Fierblocks Plugin Based Callback Handler
 
 > **_WARNING:_** This is a WIP Alpha project. Please do not use it on your production environment.
