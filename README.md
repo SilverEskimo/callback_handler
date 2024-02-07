@@ -19,7 +19,7 @@ It is engineered to seamlessly integrate with plugins, allowing users to effortl
 ---
 
 
-## Table Of Content 
+## Table Of Contents
 
 - [Introduction](#introduction)
 - [Base Plugins](#base-plugins)
