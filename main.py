@@ -52,9 +52,6 @@ async def tx_approval(request: Request, payload: dict):
 @app.post("/v2/config_change_sign_request")
 @authenticate_jwt
 async def change_approval(request: Request):
-    # Assuming this endpoint needs to perform some operations before returning 'reject'
     # Placeholder for actual logic
     return JSONResponse(content={"message": "reject"})
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=settings.SERVER_PORT)

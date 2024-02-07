@@ -1,7 +1,6 @@
 from typing import Optional
 from dataclasses import dataclass
 from src.authenticate import JWTAuthenticator
-from src.logs.logger_config import logger
 
 
 @dataclass
