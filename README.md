@@ -8,8 +8,8 @@
 </div>
 
 # Fierblocks Plugin Based Callback Handler
-
-> **_WARNING:_** This is a WIP Alpha project. Please do not use it on your production environment.
+‼️
+> **_WARNING:_** This is a WIP Alpha project. Please do not use it on your production environment
 ## Introduction:
 ### Fireblocks API Co-Signer & Callback Handler
 The Fireblocks API Co-Signer allows you to automate approvals and signing for transactions and workspace changes. \
