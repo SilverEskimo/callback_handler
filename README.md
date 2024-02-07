@@ -8,7 +8,7 @@
 </div>
 
 # Fierblocks Plugin Based Callback Handler
-❗⚠️  `This is a WIP Alpha project. Please do not use it on your production environment` ⚠️❗
+❗⚠️  `This is a WIP Alpha project. Please do not use it in your production environment` ⚠️❗
 
 ## Introduction 👋
 ### Fireblocks API Co-Signer & Callback Handler
@@ -84,6 +84,8 @@ Purpose - making sure that the arrived transaction was not initiated by some ext
             params = 'Pass the params here'
         return query, params
    ```
+> **_NOTE:_** Updating the '_build_query' method will change anytime soon and will not require modifying a specific function.
+
 ### Extra Signature Validation (`extra_signature.py/ExtraSignature` class)
 Being executed on `POST /v2/tx_sign_request`.
 The plugin expects to receive an extra message and a signature of this message, checks that the message is signed by a known signer (by holding a pre-defined public key).
