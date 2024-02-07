@@ -1,4 +1,4 @@
-# Callback Handler Plugins Application
+# Fierblocks Plugin Based Callback Handler
 
 
 ## Table Of Content 
@@ -10,8 +10,9 @@
 - [Adding New Plugins](#adding-new-plugins-and-setting-a-new-db-connection-)
   - [Adding New Plugins](#new-plugins-)
   - [New DB Connections](#setting-a-new-db-connection-)
+- [Usage](#usage)
+---
 ## Introduction:
-
 ### Fireblocks API Co-Signer & Callback Handler
 The Fireblocks API Co-Signer allows you to automate approvals and signing for transactions and workspace changes. \
 This is ideal for any workspace expecting a high volume of transactions, frequent workspace activity, or requiring 24-hour access.\
@@ -26,6 +27,8 @@ For detailed documentation of the API Co-Signer Callback Handler Data objects pl
 The Callback Handler Plugins Application is a boilerplate application that eases the Callback Handler installation and setup for Fireblocks users. \
 The application is designed to work with plugins that any user can develop easily without spending any time or development efforts on the server application development.
 The Plugins application comes with a number of pre-configured Plugins. Description for each such plugin can be found below.
+
+---
 
 ## Base Plugins:
 ### Transaction Validation Plugin (`txid_validation.py/TxidValidation` class)
@@ -44,8 +47,30 @@ Purpose - making sure that the arrived transaction was not initiated by some ext
 8. If true -> returns `APPROVE` else returns `REJECT`
 
 #### Requirements:
-TBD
-
+1. Supported DB connection (`DB_TYPE` in .env file)
+2. DB access credentials:
+   - Username (`DB_USER` in .env file)
+   - Password (`DB_PASSWORD` in .env file)
+   - Host (`DB_HOST` in .env file)
+   - Port (`DB_PORT` in .env file if applicable)
+   - DB Name (`DB_NAME` in .env file)
+   - DB Table/Collection name (`DB_TABLE` in .env file)
+   - Transaction ID DB Column/Field name (`DB_COLUMN` in .env file)
+   - If DB type is not Postgres or Mongo, update `txid_validation.py/_build_query` method to query the DB:
+   ```python
+   def _build_query(self, tx_id: str) -> tuple:
+        """Builds a query based on the database type."""
+        query = ""
+        params = ()
+        if isinstance(self.db, PostgresDB):
+            pass
+        elif isinstance(self.db, MongoDB):
+            pass
+        elif isinstance(self.db, MyDbConn):
+            query = 'Build the query here'
+            params = 'Pass the params here'
+        return query, params
+   ```
 ### Extra Signature Validation (`extra_signature.py/ExtraSignature` class)
 Being executed on `POST /v2/tx_sign_request`.
 The plugin expects to receive an extra message and a signature of this message, checks that the message is signed by a known signer (by holding a pre-defined public key).
@@ -74,7 +99,10 @@ Purpose - making sure that the arrived transaction was initiated only by a pre-d
 8. If true -> returns `APPROVE` else returns `REJECT`
 
 #### Requirements:
-TBD
+1. Public key file path for extra signature verification (`EXTRA_SIGNATURE_PUBLIC_KEY_PATH` var in .env file) 
+2. Currently the supported signature algorithm is - `RSA-SHA256`
+
+---
 
 ## Adding new plugins and setting a new DB connection
 ### New Plugins:
@@ -119,4 +147,9 @@ class MyExamplePlugin(Plugin)
       'my_db_conn': MyDbConn
      }
      ```
-   
+## Usage
+1. Update .env file with all the relevant values 
+2. Co-Signer public key in a file (To verify received JWT received from the Co-Signer)
+3. Callback Handler private key (To sign JWT response back to the Co-Signer)
+> **_NOTE:_** Currently the application supports only local keys (both cosigner public and callback private), we recommend to place these in the `src/keys` directory and provide the full path to both in the .env file 
+4. Run `docker-compose up`
