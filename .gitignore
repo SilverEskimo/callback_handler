@@ -1,9 +1,8 @@
 .env
-test.py
 venv/
-logs/*
-!logs/.gitkeep
-keys/*
-!keys/.gitkeep
+src/logs/*
+!src/logs/.gitkeep
+src/keys/*
+!src/keys/.gitkeep
 __pycache__/
 .idea

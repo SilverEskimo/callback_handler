@@ -1,8 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-import logger_config
-from exceptions import ValidationError
+from src.logger_config import logger
+from src.exceptions import ValidationError
 
 # Load environment variables from .env file
 load_dotenv()
@@ -44,7 +44,7 @@ def validate_db_config() -> None:
 def run_validations() -> None:
     try:
         validate_db_config()
-        logger_config.logger.info("Completed all validations")
+        logger.info("Completed all validations")
     except Exception as e:
         raise  ValidationError(f"Failed to validate settings.py with the following error {e}")
 

@@ -1,6 +1,6 @@
 from typing import Optional
 from dataclasses import dataclass
-from authenticate import JWTAuthenticator
+from src.authenticate import JWTAuthenticator
 
 
 @dataclass

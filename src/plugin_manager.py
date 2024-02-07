@@ -1,7 +1,7 @@
 import importlib
-from logger_config import logger
-from databases.mongo import MongoDB
-from databases.postgres import PostgresDB
+from src.logger_config import logger
+from src.databases.mongo import MongoDB
+from src.databases.postgres import PostgresDB
 
 
 class PluginManager:
@@ -22,7 +22,7 @@ class PluginManager:
                 class_name = "".join(
                     word.capitalize() for word in plugin_name.split("_")
                 )
-                module = importlib.import_module(name=f"plugins.{plugin_name}")
+                module = importlib.import_module(name=f"src.plugins.{plugin_name}")
                 plugin_class = getattr(module, class_name)
                 plugin_instance = plugin_class(db_instance)
                 self.plugins.append(plugin_instance)

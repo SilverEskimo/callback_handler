@@ -1,9 +1,9 @@
-import settings
-from exceptions import PluginError
-from interfaces import Plugin
-from logger_config import logger
-from databases.mongo import MongoDB
-from databases.postgres import PostgresDB
+from src import settings
+from src.exceptions import PluginError
+from src.interfaces import Plugin
+from src.logger_config import logger
+from src.databases.mongo import MongoDB
+from src.databases.postgres import PostgresDB
 
 
 class TxidValidation(Plugin):
@@ -33,7 +33,7 @@ class TxidValidation(Plugin):
                     f'WHERE {settings.DB_COLUMN} = $1'
             return query, params
         elif isinstance(self.db, MongoDB):
-            query = {settings.DB_COLUMN: tx_id}
+            query = { settings.DB_COLUMN: tx_id }
             return query, ("find_one",)
         else:
             raise NotImplementedError("Query generation not implemented for this database type")

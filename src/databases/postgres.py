@@ -1,4 +1,4 @@
-from interfaces import DatabaseInterface
+from src.interfaces import DatabaseInterface
 import asyncpg
 from asyncpg import Connection
 

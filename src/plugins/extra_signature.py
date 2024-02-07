@@ -1,8 +1,8 @@
 import base64
-import settings
-from exceptions import PluginError
-from interfaces import Plugin
-from logger_config import logger
+from src import settings
+from src.exceptions import PluginError
+from src.interfaces import Plugin
+from src.logger_config import logger
 from fastapi import HTTPException
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
