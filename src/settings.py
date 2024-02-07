@@ -7,7 +7,7 @@ from src.exceptions import ValidationError
 # Load environment variables from .env file
 load_dotenv()
 
-# Define your settings
+
 SUPPORTED_DATABASES = ["postgres", "mongodb"]
 PLUGINS = os.getenv("PLUGINS").split(",")
 DB_TYPE = os.getenv("DB_TYPE")
